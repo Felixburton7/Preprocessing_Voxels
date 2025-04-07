@@ -4,7 +4,7 @@ Preprocessing command for VoxelFlex (Temperature-Aware).
 
 Reads raw HDF5 voxel data and aggregated RMSF CSV data, processes voxels
 robustly (handling type/shape, skipping faulty residues), scales temperature,
-batches samples, and saves optimized tensor files (.pt) for faster training/evaluation.
+batches samples, and saves optimized tensor files (.pt) for faster memory efficient training/evaluation.
 Uses an in-memory cache for recently loaded domains during batch creation.
 """
 
