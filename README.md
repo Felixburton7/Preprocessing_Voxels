@@ -5,9 +5,9 @@
 **Goal:** To convert the large and complex raw input data into a simple, optimized format suitable for loading during model training.
 
 **Purpose of this script:** Previous attempts using "on-the-fly" data loading during training proved complex, and put computational strain on the database to errors due to the nature of the raw data. This preprocessing step aims to:
-1.  Perform computationally intensive tasks (data type casting, shape manipulation, temperature scaling) **once upfront**.
+1.  Perform computationally intensive tasks (data type casting, shape manipulation, temperature scaling) **once**.
 2.  Handle data inconsistencies and filter invalid samples **before training**.
-3.  Save the processed data in pre-batched PyTorch tensor files (`.pt`) for **rapid loading** by the `DataLoader` during the `train` phase.
+3.  Save the processed data in pre-batched PyTorch tensor files (`.pt`) for **efficient loading** by the `DataLoader` during the `train` phase.
 4.  **Simplify** the actual `train` script significantly.
 
 ## Input Data
@@ -66,8 +66,7 @@ The primary output of `preprocess` is stored in the directory specified by `data
         *   Batch Size: 256
         *   **Number of `.pt` files (Train): ~13,062** 
         *   Size per `.pt` file: ~47.4 MB (observed from `ls -lh`)
-        *   **Estimated Total Size (Train): ~13,062 files * 47.4 MB/file ≈ 619 GB**
-        *   Validation/Test sets would add fewer files but increase the total size further.
+        *   **Estimated Total Size (Train): ~13,062 files * 47.4 MB/file ≈ 619 GB** 
     *   **Note:** This large size is expected and is the trade-off for having readily processed data. It converts the HDF5/CSV into an expanded, ML-optimized format.
 2.  **Metadata Files (`.meta`):**
     *   Location: `input_data/processed/`
