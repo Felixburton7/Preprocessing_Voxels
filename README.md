@@ -61,13 +61,9 @@ The primary output of `preprocess` is stored in the directory specified by `data
         }
         ```
         where `B` is the number of samples in that batch (<= `preprocessing_batch_size`).
-    *   **Scale (Observed Run):**
+    *   **Successful Run**
         *   Training Samples: ~3,343,872
         *   Batch Size: 256
-        *   **Number of `.pt` files (Train): ~13,062** 
-        *   Size per `.pt` file: ~47.4 MB (observed from `ls -lh`)
-        *   **Estimated Total Size (Train): ~13,062 files * 47.4 MB/file ≈ 619 GB** 
-    *   **Note:** This large size is expected and is the trade-off for having readily processed data. It converts the HDF5/CSV into an expanded, ML-optimized format.
 2.  **Metadata Files (`.meta`):**
     *   Location: `input_data/processed/`
     *   Files: `train_batches.meta`, `val_batches.meta`, `test_batches.meta`
