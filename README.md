@@ -1,4 +1,4 @@
-# VoxelFlex Preprocessing Summary & Failure Analysis (Run: 2025-04-06 ~16:11 - 17:30)
+# VoxelFlex Preprocessing Summary
 
 ## Purpose of the `preprocess` Command
 
