@@ -41,7 +41,6 @@ from voxelflex.utils.temp_scaling import calculate_and_save_temp_scaling, get_te
 
 # Define a simple LRU cache using OrderedDict for the voxel data
 class SimpleLRUCache:
-    # ... (cache implementation remains the same) ...
     def __init__(self, capacity: int):
         self.cache = OrderedDict()
         self.capacity = max(1, capacity) # Ensure capacity is at least 1
